@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_fail</title>
+</head>
+<body>
+{{ error }}
+<form action="/item_get" method="post">
+    <input type="hidden" name="id" value={{ id }}>
+    <input type="submit" name="send" value="return">
+</form>
+</body>
+</html>

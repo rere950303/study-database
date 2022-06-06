@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>item_buying</title>
+</head>
+<body>
+
+Your balance: {{ balance }}<br>
+Your rating: {{ rating }}<br><br>
+
+Total price: {{ total_price }}<br>
+Discount price: {{ discount_price }}<br>
+================================================
+Final price: {{ final_price }}<br>
+
+<form action="/confirm" method="post">
+    <input type="hidden" name="price" value={{ price }}>
+    <input type="hidden" name="amount" value={{ amount }}>
+    <input type="hidden" name="name" value={{ name }}>
+    <input type="hidden" name="code" value={{ code }}>
+    <input type="hidden" name="buyer" value={{ buyer }}>
+    <input type="hidden" name="final_price" value={{ final_price }}>
+    <input type="hidden" name="seller" value={{ seller }}>
+    <input type="hidden" name="total_price" value={{ total_price }}>
+
+    <input type="submit" name="send" value="confirm">
+</form>
+
+<form action="/cancel" method="post">
+    <input type="hidden" name="id" value={{ buyer }}>
+
+    <input type="submit" name="send" value="cancel">
+</form>
+
+
+
+
+
+</body>
+</html>

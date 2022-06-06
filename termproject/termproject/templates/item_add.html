@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>item_add</title>
+</head>
+<body>
+CATEGORY LIST
+<table border="1">
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form action="/item_add" method="post">
+    <input type="hidden" name="id" value={{ id }}>
+
+    <label for="code">Code:</label><br>
+    <input id="code" type="text" name="code" value=""><br>
+
+    <label for="name">Name:</label><br>
+    <input id="name" type="text" name="name" value=""><br>
+
+    <label for="price">Price:</label><br>
+    <input id="price" type="text" name="price" value=""><br>
+
+    <label for="stock">Stock:</label><br>
+    <input id="stock" type="text" name="stock" value=""><br>
+
+    <input type="submit" name="send" value="add">
+</form>
+
+<form action="/cancel" method="post">
+    <input type="hidden" name="id" value={{ id }}>
+
+    <input type="submit" name="send" value="cancel">
+</form>
+
+</body>
+</html>

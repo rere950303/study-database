@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>item_buy</title>
+</head>
+<body>
+ITEM INFO
+<table border="1">
+    <thead>
+        <th>code</th>
+        <th>name</th>
+        <th>price</th>
+        <th>stock</th>
+        <th>seller</th>
+    </thead>
+
+    <tbody>
+    <td>{{ code }}</td>
+    <td>{{ name }}</td>
+    <td>{{ price }}</td>
+    <td>{{ stock }}</td>
+    <td>{{ seller }}</td>
+    </tbody>
+</table>
+
+Your balance: {{ profile[0] }}<br>
+Your rating: {{ profile[1] }}<br>
+
+<form action="/item_buying" method="post">
+    <input type="hidden" name="code" value={{ code }}>
+    <input type="hidden" name="name" value={{ name }}>
+    <input type="hidden" name="price" value={{ price }}>
+    <input type="hidden" name="stock" value={{ stock }}>
+    <input type="hidden" name="seller" value={{ seller }}>
+    <input type="hidden" name="buyer" value={{ buyer }}>
+    <input type="hidden" name="balance" value={{ profile[0] }}>
+    <input type="hidden" name="rating" value={{ profile[1] }}>
+
+    <label for="amount">How many?:</label><br>
+    <input id="amount" type="text" name="amount" value=""><br>
+
+    <input type="submit" name="send" value="buy">
+</form>
+
+<form action="/cancel" method="post">
+    <input type="hidden" name="id" value={{ buyer }}>
+
+    <input type="submit" name="send" value="cancel">
+</form>
+</body>
+</html>

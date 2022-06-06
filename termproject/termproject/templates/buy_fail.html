@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buy_fail</title>
+</head>
+<body>
+{{ error }}
+<form action="/item_buy" method="post">
+    <input type="hidden" name="code" value={{ code }}>
+    <input type="hidden" name="name" value={{ name }}>
+    <input type="hidden" name="price" value={{ price }}>
+    <input type="hidden" name="stock" value={{ stock }}>
+    <input type="hidden" name="seller" value={{ seller }}>
+    <input type="hidden" name="buyer" value={{ buyer }}>
+
+    <input type="submit" name="send" value="return">
+</form>
+</body>
+</html>
